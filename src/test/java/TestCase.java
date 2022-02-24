@@ -27,7 +27,6 @@ public class TestCase {
         driver.navigate().to(URLMarket);
         driver.findElement(By.id("next2")).click();
         driver.quit();
-
     }
 
 }
