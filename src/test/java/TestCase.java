@@ -28,9 +28,6 @@ public class TestCase {
     public void NavigateToMarketDemoblaze(){
         driver.navigate().to(URLMarket);
         driver.findElement(By.xpath("//a[contains(text(),'Laptops')]")).click();
-        driver.findElement(By.xpath("//*[@id='tbodyid']/div[1]/div/a")).click();
-        WebElement addToCart = driver.findElement(By.className("btn btn-success btn-lg");
-        String TextCart = addToCart.getAttribute("textContent")
         driver.quit();
     }
 
