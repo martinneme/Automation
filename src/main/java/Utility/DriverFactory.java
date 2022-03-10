@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import java.util.concurrent.TimeUnit;
 
 public class DriverFactory{
     private static String browser;
@@ -26,6 +27,7 @@ public class DriverFactory{
             driver = new FirefoxDriver();
         };
 
+        driver.manage().timeouts().implicitlyWait(500   , TimeUnit.MICROSECONDS);
 
         return driver;
     }
