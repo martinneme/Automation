@@ -22,8 +22,8 @@ public class TCPrimeraEntrega {
         WebDriverWait wait = new WebDriverWait(driver,4);
 
         driver.navigate().to(URLMarket);
-        driver.findElement(By.xpath("//a[contains(text(),'Laptops')]/ancestor::div[@class='list-group']")).click();
-        driver.findElement(By.xpath("//div[@id='tbodyid']/descendant::a[1]")).click();
+        driver.findElement(By.xpath("//div[@class='list-group']/child::a[contains(text(),'Laptops')]")).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='tbodyid']/descendant::a[1]"))).click();;
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2[class='name']")));
         String nameProd  = driver.findElement(By.cssSelector("h2[class='name']")).getText();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3[class='price-container']")));
