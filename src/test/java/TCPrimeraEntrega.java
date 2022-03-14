@@ -19,7 +19,7 @@ public class TCPrimeraEntrega {
     public void NavigateToMarketDemoblaze()  {
 
 
-        WebDriverWait wait = new WebDriverWait(driver,4);
+        WebDriverWait wait = new WebDriverWait(driver,10);
 
         driver.navigate().to(URLMarket);
         driver.findElement(By.xpath("//div[@class='list-group']/child::a[contains(text(),'Laptops')]")).click();
