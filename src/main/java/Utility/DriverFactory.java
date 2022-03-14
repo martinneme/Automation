@@ -27,7 +27,7 @@ public class DriverFactory{
             driver = new FirefoxDriver();
         };
 
-        driver.manage().timeouts().implicitlyWait(6   , TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(7   , TimeUnit.SECONDS);
 
         return driver;
     }
