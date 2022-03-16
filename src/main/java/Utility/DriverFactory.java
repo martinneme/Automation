@@ -28,15 +28,16 @@ public class DriverFactory{
             System.setProperty("webdriver.gecko.driver", pathDriver +"geckofriver.exe");
             driver = new FirefoxDriver();
         };
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(20 , TimeUnit.SECONDS);
 
-        driver.manage().timeouts().implicitlyWait(15   , TimeUnit.SECONDS);
 
 
         return driver;
     }
 
     public static WebDriverWait getWait() {
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 20);
         return wait;
     }
 

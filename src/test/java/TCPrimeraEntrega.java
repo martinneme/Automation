@@ -1,16 +1,14 @@
 
-import Pages.CategorySection;
-import Pages.ProductPage;
+import Pages.*;
 import Utility.DriverFactory;
 import Utility.PropertiesFile;
 import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import Pages.IndexPage;
 import Pages.CategorySection;
+
+import java.util.concurrent.TimeUnit;
 
 
 public class TCPrimeraEntrega {
@@ -22,10 +20,11 @@ public class TCPrimeraEntrega {
     public void NavigateToMarketDemoblaze()  {
 
 
-        WebDriverWait wait = new WebDriverWait(driver,10);
+      
         IndexPage index = new IndexPage(driver);
         CategorySection categorySection = new CategorySection(driver);
         ProductPage productPage = new ProductPage(driver);
+
 
         driver.get(URLMarket);
         index.EnterToLaptopSection();
@@ -34,7 +33,8 @@ public class TCPrimeraEntrega {
         productPage.AddTocart();
         String ProdAlert = productPage.AlertAcept();
         Assert.assertEquals("Product added",ProdAlert);
-
+        System.out.println("Llego aca");
+        productPage.ToCartSection();
         driver.quit();
     }
 
