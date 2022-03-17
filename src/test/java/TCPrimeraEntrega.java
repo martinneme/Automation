@@ -20,18 +20,20 @@ public class TCPrimeraEntrega {
     public void NavigateToMarketDemoblaze()  {
 
 
-        WebDriverWait wait = new WebDriverWait(driver,10);
+        WebDriverWait wait = new WebDriverWait(driver,15);
 
         driver.navigate().to(URLMarket);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='list-group']/child::a[contains(text(),'Laptops')]")));
         WebElement Laptops = driver.findElement(By.xpath("//div[@class='list-group']/child::a[contains(text(),'Laptops')]"));
         Laptops.click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='tbodyid']/descendant::a[1]"))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'Sony vaio i5')]"))).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2[class='name']")));
         String nameProd  = driver.findElement(By.cssSelector("h2[class='name']")).getText();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h3[class='price-container']")));
         String  priceProd = driver.findElement(By.cssSelector("h3[class='price-container']")).getText();
         System.out.println("El producto "+nameProd+" cuesta "+priceProd.substring(0,4));
+        Assert.assertEquals("$790",priceProd.substring(0,4));
+        Assert.assertEquals("Sony vaio i5",nameProd);
         driver.findElement(By.cssSelector("a[onclick*='addToCart']")).click();
         wait.until(ExpectedConditions.alertIsPresent());
         String MsjPrompt = driver.switchTo().alert().getText();
