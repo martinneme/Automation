@@ -10,7 +10,7 @@ import java.time.Duration;
 
 
 
-public class NavPage {
+public class NavPage extends BasePage {
 
     By btnCartTab = By.xpath("//a[contains(text(),'Cart')]");
     WebDriver driver;
@@ -24,10 +24,8 @@ public class NavPage {
 
 
     public void WaitToClick(By element){
-        FluentWait waitF = new FluentWait(driver)
-                .withTimeout(Duration.ofSeconds(45))
-                .pollingEvery(Duration.ofSeconds(10));
-        waitF.until(ExpectedConditions.elementToBeClickable(element));
+
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public void ToCartSection(){

@@ -39,7 +39,7 @@ public class DriverFactory{
     }
 
     public static WebDriverWait getWait() {
-        wait = new WebDriverWait(driver, 20);
+        wait = new WebDriverWait(driver, 25);
         return wait;
     }
 

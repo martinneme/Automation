@@ -27,18 +27,23 @@ public class ProductPage {
 
     }
 
-    public void SaveAndShowProdDetails(){
-        BasePage.WaitElement(NameProd);
-        String prodName = driver.findElement(NameProd).getText();
+    public String PriceProd(){
+
         BasePage.WaitElement(PriceProd);
         String prodPrice = driver.findElement(PriceProd).getText();
-        System.out.println("El producto "+prodName+" cuesta "+prodPrice.substring(0,4));
+        return prodPrice.substring(0,4);
+    }
+
+    public String NameProd(){
+        BasePage.WaitElement(NameProd);
+        String prodName = driver.findElement(NameProd).getText();
+        return prodName;
     }
 
     public String AlertAcept(){
         BasePage.AlertIsPresent();
         String MsjPrompt = driver.switchTo().alert().getText();
-        driver.switchTo().alert().accept();
+
         return MsjPrompt;
     }
 

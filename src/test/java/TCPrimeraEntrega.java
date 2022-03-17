@@ -7,11 +7,11 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 import Pages.CategorySection;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
+
 
 
 public class TCPrimeraEntrega {
@@ -30,17 +30,21 @@ public class TCPrimeraEntrega {
         NavPage navePage = new NavPage(driver);
 
         FluentWait wait = new FluentWait(driver);
-        wait.withTimeout(Duration.ofSeconds(45));
+        wait.withTimeout(Duration.ofSeconds(25));
         wait.pollingEvery(Duration.ofSeconds(5));
 
 
         driver.get(URLMarket);
         index.EnterToLaptopSection();
         categorySection.SelectToProduct();
-        productPage.SaveAndShowProdDetails();
+        String priceProd= productPage.PriceProd();
+        String nameProd = productPage.NameProd();
+        Assert.assertEquals("$790",priceProd);
+        Assert.assertEquals("Sony vaio i5",nameProd);
         productPage.AddTocart();
         wait.until(ExpectedConditions.alertIsPresent());
         String MsjPrompt = driver.switchTo().alert().getText();
+        driver.switchTo().alert().accept();
         Assert.assertEquals("Product added",MsjPrompt);
         navePage.ToCartSection();
         driver.quit();

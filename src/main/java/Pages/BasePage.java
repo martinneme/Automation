@@ -12,7 +12,7 @@ public class BasePage {
     static WebDriverWait wait;
 
     public BasePage(){
-        this.wait = DriverFactory.getWait();
+        wait = DriverFactory.getWait();
     }
 
     public static void WaitElement(By element){
