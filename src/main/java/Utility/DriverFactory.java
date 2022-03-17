@@ -27,19 +27,19 @@ public class DriverFactory{
             System.setProperty("webdriver.edge.driver", pathDriver + "msedgedriver.exe");
             driver = new EdgeDriver();
         }else if(browser.equals("firefox")){
-            System.setProperty("webdriver.gecko.driver", pathDriver +"geckofriver.exe");
+            System.setProperty("webdriver.gecko.driver", pathDriver +"geckodriver.exe");
             driver = new FirefoxDriver();
         };
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20 , TimeUnit.SECONDS);
-
+        driver.manage().timeouts().implicitlyWait(10 , TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 15);
 
 
         return driver;
     }
 
     public static WebDriverWait getWait() {
-        wait = new WebDriverWait(driver, 25);
+
         return wait;
     }
 

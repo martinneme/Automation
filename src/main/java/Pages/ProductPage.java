@@ -34,6 +34,7 @@ public class ProductPage {
         return prodPrice.substring(0,4);
     }
 
+
     public String NameProd(){
         BasePage.WaitElement(NameProd);
         String prodName = driver.findElement(NameProd).getText();
