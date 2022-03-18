@@ -31,7 +31,7 @@ public class ProductPage {
 
         BasePage.WaitElement(PriceProd);
         String prodPrice = driver.findElement(PriceProd).getText();
-        return prodPrice.substring(0,4);
+        return prodPrice.substring(1,4);
     }
 
 
@@ -41,12 +41,7 @@ public class ProductPage {
         return prodName;
     }
 
-    public String AlertAcept(){
-        BasePage.AlertIsPresent();
-        String MsjPrompt = driver.switchTo().alert().getText();
 
-        return MsjPrompt;
-    }
 
 
 

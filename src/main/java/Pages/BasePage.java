@@ -16,7 +16,7 @@ public class BasePage {
     }
 
     public static void WaitElement(By element){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
 

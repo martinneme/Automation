@@ -31,15 +31,14 @@ public class DriverFactory{
             driver = new FirefoxDriver();
         };
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10 , TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 15);
+        driver.manage().timeouts().implicitlyWait(20 , TimeUnit.SECONDS);
+        wait = new WebDriverWait(driver, 20);
 
 
         return driver;
     }
 
     public static WebDriverWait getWait() {
-
         return wait;
     }
 

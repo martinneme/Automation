@@ -24,12 +24,11 @@ public class NavPage extends BasePage {
 
 
     public void WaitToClick(By element){
-
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void ToCartSection(){
-        WaitToClick(btnCartTab);
+    public void ToCartSection() throws InterruptedException{
+        Thread.sleep(7000);
         driver.findElement(btnCartTab).click();
     }
 
