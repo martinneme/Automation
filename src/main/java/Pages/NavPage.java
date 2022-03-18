@@ -28,7 +28,6 @@ public class NavPage extends BasePage {
     }
 
     public void ToCartSection() throws InterruptedException{
-        Thread.sleep(7000);
         driver.findElement(btnCartTab).click();
     }
 

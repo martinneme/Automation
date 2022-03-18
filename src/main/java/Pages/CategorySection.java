@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 
 public class CategorySection {
-    By Firstproduct = By.xpath("//div[@id='tbodyid']/descendant::a[1]");
+    By Firstproduct = By.xpath("//a[contains(text(),'Sony vaio i5')]");
 
     WebDriver driver;
 

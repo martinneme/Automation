@@ -29,7 +29,7 @@ public class DriverFactory{
         }else if(browser.equals("firefox")){
             System.setProperty("webdriver.gecko.driver", pathDriver +"geckodriver.exe");
             driver = new FirefoxDriver();
-        };
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20 , TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 20);

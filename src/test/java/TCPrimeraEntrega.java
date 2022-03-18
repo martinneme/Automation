@@ -39,7 +39,7 @@ public class TCPrimeraEntrega {
 
         index.EnterToLaptopSection();
         categorySection.SelectToProduct();
-        // Thread.sleep(7000);
+
         String priceProd = productPage.PriceProd();
         String nameProd = productPage.NameProd();
 
@@ -48,19 +48,18 @@ public class TCPrimeraEntrega {
 
         productPage.AddTocart();
 
-        Thread.sleep(7000);
+
         waitf.until(ExpectedConditions.alertIsPresent());
         Alert alert = driver.switchTo().alert();
         Assert.assertEquals("Product added", alert.getText());
-        Thread.sleep(3000);
         alert.accept();
-        Thread.sleep(5000);
 
+    
         navePage.ToCartSection();
 
 
         Assert.assertEquals(nameProd, cartPage.GetTitleProd());
-        Assert.assertEquals(nameProd, cartPage.GetPriceProd());
+        Assert.assertEquals(priceProd, cartPage.GetPriceProd());
 
         cartPage.ClickBtnPlacerOrder();
 

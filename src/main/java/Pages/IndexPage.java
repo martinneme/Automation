@@ -9,8 +9,8 @@ import org.openqa.selenium.WebDriver;
 
 public class IndexPage extends BasePage{
 
-    By btnLaptops = By.xpath("//a[contains(text(),'Sony vaio i5')]");
-    //div[@class='list-group']/child::a[contains(text(),'Laptops')]
+    By btnLaptops = By.xpath("//a[contains(text(),'Laptops')]");
+
 
     WebDriver driver;
 
