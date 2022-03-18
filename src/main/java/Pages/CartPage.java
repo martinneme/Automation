@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 
 
-public class CartPage  {
+public class CartPage{
 
     By btnPlaceOrder = By.xpath("//button[contains(text(),'Place Order')]");
 

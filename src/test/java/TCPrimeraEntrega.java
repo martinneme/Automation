@@ -19,7 +19,7 @@ public class TCPrimeraEntrega {
 
 
     @Test
-    public void NavigateToMarketDemoblaze() throws InterruptedException {
+    public void NavigateToMarketDemoblaze(){
 
 
         IndexPage index = new IndexPage(driver);
@@ -54,7 +54,7 @@ public class TCPrimeraEntrega {
         Assert.assertEquals("Product added", alert.getText());
         alert.accept();
 
-    
+
         navePage.ToCartSection();
 
 

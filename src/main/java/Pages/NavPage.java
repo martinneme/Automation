@@ -27,7 +27,7 @@ public class NavPage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void ToCartSection() throws InterruptedException{
+    public void ToCartSection(){
         driver.findElement(btnCartTab).click();
     }
 
