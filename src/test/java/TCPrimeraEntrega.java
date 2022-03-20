@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import Pages.CategorySection;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -17,6 +19,11 @@ public class TCPrimeraEntrega {
     private String URLMarket = PropertiesFile.getProperty("URLdemo");
     private WebDriver driver = DriverFactory.getWebDriverBrowser();
 
+    @BeforeTest
+    public void beforeTest() {
+        System.out.println("/**  STARTING TO TEST    /**");
+        driver.get(URLMarket);
+    }
 
     @Test
     public void NavigateToMarketDemoblaze(){
@@ -35,7 +42,7 @@ public class TCPrimeraEntrega {
         waitf.pollingEvery(Duration.ofSeconds(2));
 
 
-        driver.get(URLMarket);
+
 
         index.EnterToLaptopSection();
         categorySection.SelectToProduct();
@@ -68,6 +75,12 @@ public class TCPrimeraEntrega {
         Assert.assertEquals(modalConfirmPage.GetMsjConfirm(), "Thank you for your purchase!");
         modalConfirmPage.ClickConfirmOk();
 
+
+    }
+
+    @AfterTest
+    public void AfterTest(){
+        System.out.println("/**  END TO TEST    /**");
         driver.quit();
     }
 
