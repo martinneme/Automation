@@ -9,6 +9,9 @@ public class ModalConfirmPage extends BasePage {
 
     By msjH2 = By.xpath("//div[@class='sweet-alert  showSweetAlert visible']/child::h2");
     By btnConfirm = By.xpath("//button[@class='confirm btn btn-lg btn-primary']");
+    By txtConfirm = By.xpath("//p[@class='lead text-muted ']");
+
+
 
 
     WebDriver driver;
@@ -27,7 +30,10 @@ public class ModalConfirmPage extends BasePage {
         driver.findElement(btnConfirm).click();
     }
 
+    public String getTxtConfirm(){
+        return driver.findElement(txtConfirm).getText();
 
+    }
 
 
 
