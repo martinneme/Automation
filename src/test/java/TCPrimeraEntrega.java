@@ -37,6 +37,7 @@ public class TCPrimeraEntrega {
         CartPage cartPage = new CartPage(driver);
         ModalOrderPage modalOrderPage = new ModalOrderPage(driver);
         ModalConfirmPage modalConfirmPage = new ModalConfirmPage(driver);
+        ProductsAllPage productsAllPage = new ProductsAllPage(driver);
 
 
         FluentWait waitf = new FluentWait(driver);
@@ -47,7 +48,7 @@ public class TCPrimeraEntrega {
 
 
         index.EnterToLaptopSection();
-        productPage.ClickToProductRange(780,890);
+        productsAllPage.ClickToProductRange(780,890);
 
         String priceProd = productPage.PriceProd();
         String nameProd = productPage.NameProd();
